@@ -1,6 +1,6 @@
 import {NextResponse} from 'next/server'
 
-export async function GET(request, context){
+export async function GET(request:any, context:any){
     const {params}=context
     const {abc}=params
     console.log(request,context)
