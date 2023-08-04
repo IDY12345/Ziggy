@@ -1,7 +1,13 @@
+import React from 'react'
+
+import getDomain from '../lib/getDomain'
+
 async function getData(){
     //1 endpoint - API 
 
-    const endpoint="http://localhost:3000/api/posts"
+    const domain=getDomain()
+
+    const endpoint=`${domain}/api/posts`
 
     const res=await fetch(endpoint)
 
@@ -16,6 +22,7 @@ async function getData(){
 export default async function BlogPage() {
     const data=await getData()
     const items=data && data.items ? [...data.items]:[]
+    console.log(process.env.PUBLIC_DOMAIN)
     return<main>
         <h1>Hello World</h1>
         <p>Posts:</p>
