@@ -13,7 +13,7 @@ async function getData(){
 }
 
 
-export default async function BlogPage() {
+export default async function Error1() {
     const data=await getData()
     const items=data && data.items ? [...data.items]:[]
     return<main>
